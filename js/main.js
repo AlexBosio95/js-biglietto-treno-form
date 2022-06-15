@@ -62,6 +62,7 @@ btnCalc.addEventListener('click', function() {
 resetCalc.addEventListener('click', function() {
     kmUser.value = ""
     ageUser.value = ""
+    nameUser.value = ""
     document.getElementById('name-t-user').innerHTML = "Name"
     document.getElementById("price-user").innerHTML = "0.00";
     document.getElementById("crz-numer").innerHTML = "00";

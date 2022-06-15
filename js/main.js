@@ -11,7 +11,7 @@ const kmUser = document.querySelector('#km-user');
 const ageUser = document.querySelector('#age-user');
 const nameUser = document.querySelector('#name-user');
 const btnCalc = document.querySelector('#calc-button');
-
+const resetCalc = document.querySelector('#reset-button')
 
 
 btnCalc.addEventListener('click', function() {
@@ -23,8 +23,8 @@ btnCalc.addEventListener('click', function() {
             console.log(((kmUser.value * 0.26) - (((kmUser.value * 0.26) / 100) * 15)).toFixed(2) + (" €"));
             document.getElementById("price-user").innerHTML = (((kmUser.value * 0.26) - (((kmUser.value * 0.26) / 100) * 20)).toFixed(2) + (" €"));
             document.getElementById('name-t-user').innerHTML = (nameUser.value)
-            document.getElementById("crz-numer").innerHTML = Math.floor((Math.random() * 10) + 1);
-            document.getElementById("cp-code").innerHTML = Math.floor((Math.random() * 1000) + 1);
+            document.getElementById("crz-numer").innerHTML = Math.floor((Math.random() * 100) + 1);
+            document.getElementById("cp-code").innerHTML = Math.floor((Math.random() * 10000) + 1);
             document.getElementById('dicount').innerHTML = "Biglietto Under" + " " + "(- 15%)"
         }
 
@@ -32,8 +32,8 @@ btnCalc.addEventListener('click', function() {
             console.log(((kmUser.value * 0.26) - (((kmUser.value * 0.26) / 100) * 35)).toFixed(2) + (" €"));
             document.getElementById("price-user").innerHTML = (((kmUser.value * 0.26) - (((kmUser.value * 0.26) / 100) * 40)).toFixed(2) + (" €"));
             document.getElementById('name-t-user').innerHTML = (nameUser.value)
-            document.getElementById("crz-numer").innerHTML = Math.floor((Math.random() * 10) + 1);
-            document.getElementById("cp-code").innerHTML = Math.floor((Math.random() * 1000) + 1);
+            document.getElementById("crz-numer").innerHTML = Math.floor((Math.random() * 100) + 1);
+            document.getElementById("cp-code").innerHTML = Math.floor((Math.random() * 10000) + 1);
             document.getElementById('dicount').innerHTML = "Biglietto Over" + " " + "(- 35%)"
 
         }
@@ -42,8 +42,8 @@ btnCalc.addEventListener('click', function() {
             console.log((kmUser.value * 0.26).toFixed(2) + (" €"));
             document.getElementById('name-t-user').innerHTML = (nameUser.value)
             document.getElementById("price-user").innerHTML = ((kmUser.value * 0.26).toFixed(2) + (" €"));
-            document.getElementById("crz-numer").innerHTML = Math.floor((Math.random() * 10) + 1);
-            document.getElementById("cp-code").innerHTML = Math.floor((Math.random() * 1000) + 1);
+            document.getElementById("crz-numer").innerHTML = Math.floor((Math.random() * 100) + 1);
+            document.getElementById("cp-code").innerHTML = Math.floor((Math.random() * 10000) + 1);
             document.getElementById('dicount').innerHTML = "Biglietto Standard" 
 
         }
@@ -57,4 +57,15 @@ btnCalc.addEventListener('click', function() {
 
 })
 
+
+
+resetCalc.addEventListener('click', function() {
+    kmUser.value = ""
+    ageUser.value = ""
+    document.getElementById('name-t-user').innerHTML = "Name"
+    document.getElementById("price-user").innerHTML = "0.00";
+    document.getElementById("crz-numer").innerHTML = "00";
+    document.getElementById("cp-code").innerHTML = "000";
+    document.getElementById('dicount').innerHTML = "Biglietto" 
+})
 

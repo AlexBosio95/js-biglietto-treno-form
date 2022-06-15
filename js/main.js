@@ -9,6 +9,7 @@
 
 const kmUser = document.querySelector('#km-user');
 const ageUser = document.querySelector('#age-user');
+const nameUser = document.querySelector('#name-user');
 const btnCalc = document.querySelector('#calc-button');
 
 
@@ -20,19 +21,30 @@ btnCalc.addEventListener('click', function() {
         
         if (ageUser.value <= 18) {
             console.log((result - (((kmUser.value * 0.26) / 100) * 20)).toFixed(2) + (" €"));
+            document.getElementById("price-user").innerHTML = ((result - (((kmUser.value * 0.26) / 100) * 20)).toFixed(2) + (" €"));
         }
 
         else if (ageUser.value >= 65) {
             console.log((result - (((kmUser.value * 0.26) / 100) * 40)).toFixed(2) + (" €"));
+            document.getElementById("price-user").innerHTML = ((result - (((kmUser.value * 0.26) / 100) * 40)).toFixed(2) + (" €"));
+
         }
         
         else{
             console.log((kmUser.value * 0.26).toFixed(2) + (" €"));
+            document.getElementById('name-t-user').innerHTML = (nameUser.value)
+            document.getElementById("price-user").innerHTML = ((kmUser.value * 0.26).toFixed(2) + (" €"));
+            document.getElementById("crz-numer").innerHTML = Math.floor((Math.random() * 10) + 1);
+            document.getElementById("cp-code").innerHTML = Math.floor((Math.random() * 1000) + 1);
+            document.getElementById('dicount').innerHTML += " Standard" 
+
         }
     } 
 
     else{
         alert('Valore inserito mancante o non accettato');
+        kmUser.value = "";
+        ageUser.value = "";
     }
 
 })

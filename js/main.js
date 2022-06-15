@@ -20,13 +20,21 @@ btnCalc.addEventListener('click', function() {
     if ((kmUser.value != "") && (ageUser.value != "")) {
         
         if (ageUser.value <= 18) {
-            console.log((result - (((kmUser.value * 0.26) / 100) * 20)).toFixed(2) + (" €"));
-            document.getElementById("price-user").innerHTML = ((result - (((kmUser.value * 0.26) / 100) * 20)).toFixed(2) + (" €"));
+            console.log(((kmUser.value * 0.26) - (((kmUser.value * 0.26) / 100) * 20)).toFixed(2) + (" €"));
+            document.getElementById("price-user").innerHTML = (((kmUser.value * 0.26) - (((kmUser.value * 0.26) / 100) * 20)).toFixed(2) + (" €"));
+            document.getElementById('name-t-user').innerHTML = (nameUser.value)
+            document.getElementById("crz-numer").innerHTML = Math.floor((Math.random() * 10) + 1);
+            document.getElementById("cp-code").innerHTML = Math.floor((Math.random() * 1000) + 1);
+            document.getElementById('dicount').innerHTML += " Standard"
         }
 
         else if (ageUser.value >= 65) {
-            console.log((result - (((kmUser.value * 0.26) / 100) * 40)).toFixed(2) + (" €"));
-            document.getElementById("price-user").innerHTML = ((result - (((kmUser.value * 0.26) / 100) * 40)).toFixed(2) + (" €"));
+            console.log(((kmUser.value * 0.26) - (((kmUser.value * 0.26) / 100) * 40)).toFixed(2) + (" €"));
+            document.getElementById("price-user").innerHTML = (((kmUser.value * 0.26) - (((kmUser.value * 0.26) / 100) * 40)).toFixed(2) + (" €"));
+            document.getElementById('name-t-user').innerHTML = (nameUser.value)
+            document.getElementById("crz-numer").innerHTML = Math.floor((Math.random() * 10) + 1);
+            document.getElementById("cp-code").innerHTML = Math.floor((Math.random() * 1000) + 1);
+            document.getElementById('dicount').innerHTML += " Over"
 
         }
         
